@@ -2,38 +2,137 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "What is the most efficient way to send an enquiry to multiple suppliers?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+         "a": "Send a separate email to each supplier",
+        "b": "Use procurement software to send a single enquiry to multiple suppliers",
+        "c": "Fax the enquiry to each supplier",
+        "d": "Call each supplier individually"
+		
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the best way to ensure that all necessary information is included in an enquiry?",
+      "answers": {
+        "a": "Use a standard template for the enquiry",
+        "b": "Write a custom enquiry for each supplier",
+        "c": "Include only the most critical information",
+        "d": "Omit any unnecessary information"
       },
+     
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "What is the most efficient way to compare prices from different suppliers?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Create a spreadsheet to compare prices",
+        "b": "Use procurement software to compare prices",
+        "c": "Manually compare prices from each supplier's quote",
+        "d": "Ask each supplier to provide a summary of their prices"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+     
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+	{
+      "question": "What is the best way to ensure that all suppliers are evaluated equally?",
+      "answers": {
+        "a": "Use a weighted scoring system to evaluate suppliers",
+        "b": "Evaluate suppliers based on price alone",
+        "c": "Evaluate suppliers based on their reputation alone",
+        "d": "Use a random selection process to choose a supplier"
       },
-      "correctAnswer": "c",
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "What is the most efficient way to create a purchase order?",
+      "answers": {
+        "a": "Use a standard template for the purchase order",
+        "b": "Write a custom purchase order for each supplier",
+        "c": "Include only the most critical information",
+        "d": "Omit any unnecessary information"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+  
+  {
+      "question": "What is the best way to ensure that all necessary information is included in a purchase order?",
+      "answers": {
+        "a": "Use a checklist to ensure all information is included",
+        "b": "Rely on the supplier to provide all necessary information",
+        "c": "Include only the most critical information",
+        "d": "Omit any unnecessary information"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	
+  {
+      "question": "What is the most efficient way to send a purchase order to a supplier?",
+      "answers": {
+        "a": "Send a physical copy of the purchase order to the supplier",
+        "b": "Send an electronic copy of the purchase order to the supplier",
+        "c": "Fax the purchase order to the supplier",
+        "d": "Call the supplier to verbally place the order"
+      },
+     
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+  
+  
+  {
+      "question": "What is the best way to track the status of a purchase order?",
+      "answers": {
+        "a": "Use procurement software to track the status of the purchase order ",
+        "b": "Call the supplier to ask about the status of the purchase order",
+        "c": "Send a follow-up email to the supplier to ask about the status of the purchase order",
+        "d": "Use a spreadsheet to track the status of the purchase order"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+  
+  
+  {
+      "question": "What is the most efficient way to manage multiple purchase orders?",
+      "answers": {
+        "a": "Use procurement software to manage multiple purchase orders",
+        "b": "Use a spreadsheet to manage multiple purchase orders",
+        "c": "Use a physical filing system to manage multiple purchase orders",
+        "d": "Manage each purchase order individually"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+  
+  
+  {
+      "question": "What is the best way to ensure that all purchase orders are compliant with organizational policies and procedures?",
+      "answers": {
+        "a": "Use procurement software to ensure compliance",
+        "b": "Rely on the supplier to ensure compliance",
+        "c": "Manually review each purchase order for compliance",
+        "d": "Ignore organizational policies and procedures"
+      },
+     
+      "correctAnswer": "a",
       "difficulty": "beginner"
     }
+  
+  
   ]
 }
