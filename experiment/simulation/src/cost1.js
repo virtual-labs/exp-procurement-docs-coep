@@ -9,27 +9,12 @@ function cost(){
 $("#Header").html("<center><span>Inquiry</span></center>");
 	
 	var htm = ` <form>
-        <div class="form-container">
-            <div class="form-group">
-                <label>Project Name:</label>
-                <input type="text" name="project_name" class = "project-header" required>
-            </div>
-            <div class="form-group">
-                <label>Industry/Sector:</label>
-                <input type="text" name="industry" class = "project-header" required>
-            </div>
-            <div class="form-group">
-                <label>Project Details:</label>
-                <input type="text" name="details" class = "project-header" required>
-            </div>
-            <div class="form-group">
-                <label>Location:</label>
-                <input type="text" name="location" class = "project-header" required>
-            </div>
-        </div>
-    </form>
+        <label>Project Name: <input type="text" name="project_name" class = "project-header" required></label><br><br>
+        <label>Industry/Sector: <input type="text" name="industry"  class = "project-header" required></label><br><br>
+        <label>Project Details: <input type="text" name="details" class = "project-header" required></label><br><br>
+        <label>Location: <input type="text" name="location" class = "project-header" required></label><br><br>
+        </form>
 
-<div id="tableDivId">
     <table id="dynamicTable">
         <thead>
             <tr>
@@ -87,11 +72,9 @@ $("#Header").html("<center><span>Inquiry</span></center>");
             </tr>
         </tbody>
     </table>
-    
     <div class="btn-container">
      <button class="btn add-btn" data-toggle="modal" data-target="#preReq">Add Row</button>
-     <button  type="submit"class="btn check-btn" >Submit & Next</button>
-    </div>
+     <button  type="submit"class="btn check-btn" data-toggle="modal" data-target="#preReq">Submit</button>
     </div>`
     
  htm +=  `	<!-- 			    The Modal  ProStr -->
@@ -190,7 +173,6 @@ $("#Header").html("<center><span>Inquiry</span></center>");
                 if ($("#dynamicTable tbody tr").length > 1) {
                     $(this).closest("tr").remove();
                     updateRowNumbers();
-                    showModal(`<strong style="color:#153f68;font-size: large;">Selected one row is removed</strong>`);
                 } else {
                   
                      showModal(`<strong style="color:#153f68;font-size: large;">At least one row is required</strong>`);
@@ -239,7 +221,7 @@ $("#Header").html("<center><span>Inquiry</span></center>");
                     showModal(`<strong style="color:#153f68;font-size: large;">All values are entered correctly</strong>`);
                 }
                 
-                $("#tableDivId").html('');
+                $("#dynamicTable").html('');
                 enquiry();
                 
   function validateForm(event) {
