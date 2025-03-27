@@ -1,16 +1,17 @@
-function enquiry(){
+function comparitive(){
 	
-	$("#Header").html("<center><span>Quatation</span></center>");
+		
+	$("#Header").html("<center><span>comparision</span></center>");
 	htm = `
-	
 	 <table id="dynamicTable">
         <thead>
             <tr>
                 <th>Sr. No.</th>
-                <th>Name of the Instrument</th>
-                <th>Quantity</th>
-                <th>Unit Price</th>
-                <th>Total Price</th>
+                <th>Description</th>
+                <th>Vendor 1</th>
+                <th>Vendor 2</th>
+                <th>Vendor 3</th>
+                <th>Vendor 4</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -55,18 +56,18 @@ function enquiry(){
                     </select>
                 </td>
                
-                <td><input type="number" class="quantity" placeholder="Enter qty"></td>
-                <td><input type="text" class="unit-cost" ></td>
-                <td><input type="text" class="total-final-cost" ></td>
-                <td><button class=" btn remove-btn" >Remove</button></td>
+                <td><input type="number" class="ven1" placeholder=""></td>
+                <td><input type="text" class="ven2" ></td>
+                <td><input type="text" class="ven3" ></td>
+                 <td><input type="text" class="ven4" ></td>
+                <td><button class=" btn remove-btn" data-toggle="modal" data-target="#preReq">Remove</button></td>
             </tr>
         </tbody>
     </table>
-    
     <div class="btn-container">
      <button class="btn add-btn" data-toggle="modal" data-target="#preReq">Add Row</button>
-     <button  type="submit"class="btn check-btn" >Submit & Next</button>
-    </div> `
+     <button  type="submit"class="btn check-btn">Submit & Next</button>
+    </div>`
 
     
      htm +=  `	<!-- 			    The Modal  ProStr -->
@@ -161,7 +162,6 @@ function enquiry(){
                 if ($("#dynamicTable tbody tr").length > 1) {
                     $(this).closest("tr").remove();
                     updateRowNumbers();
-                     showModal(`<strong style="color:#153f68;font-size: large;">Selected one row is removed</strong>`);
                 } else {
                   
                      showModal(`<strong style="color:#153f68;font-size: large;">At least one row is required</strong>`);
@@ -170,20 +170,15 @@ function enquiry(){
             
             
              $(".check-btn").click(function() { 
-				 $("#tableDivId").html('');
-                comparitive(); 
+				   $("#tableDivId").html('');
+               purchase(); 
 				 
 			}); 
-			
-			$(document).on("input", ".unit-cost", function() {
-				let row = $(this).closest("tr");
-                let basePrice = parseFloat(row.find(".unit-cost").val()) || 0;
-                let qty = parseInt(row.find(".quantity").val()) || 1;
-                let totalCost = basePrice*qty;
-				 row.find(".total-final-cost").val(totalCost.toFixed(2));
-		    });
 
-			 $(".project-header").prop("disabled",true); 
+
 });
 
+	
+	
+	
 }
