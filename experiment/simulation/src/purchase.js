@@ -1,13 +1,11 @@
-function enquiry(){
-	
-	$("#Header").html("<center><span>Quatation</span></center>");
-	htm = `
-	
+function purchase(){
+	$("#Header").html("<center><span>Purchase</span></center>");
+		htm = `
 	 <table id="dynamicTable">
         <thead>
             <tr>
                 <th>Sr. No.</th>
-                <th>Name of the Instrument</th>
+                <th>Description</th>
                 <th>Quantity</th>
                 <th>Unit Price</th>
                 <th>Total Price</th>
@@ -58,15 +56,14 @@ function enquiry(){
                 <td><input type="number" class="quantity" placeholder="Enter qty"></td>
                 <td><input type="text" class="unit-cost" ></td>
                 <td><input type="text" class="total-final-cost" ></td>
-                <td><button class=" btn remove-btn" >Remove</button></td>
+                <td><button class=" btn remove-btn" data-toggle="modal" data-target="#preReq">Remove</button></td>
             </tr>
         </tbody>
     </table>
-    
     <div class="btn-container">
      <button class="btn add-btn" data-toggle="modal" data-target="#preReq">Add Row</button>
-     <button  type="submit"class="btn check-btn" >Submit & Next</button>
-    </div> `
+     <button  type="submit"class="btn check-btn" >Submit</button>
+    </div>`
 
     
      htm +=  `	<!-- 			    The Modal  ProStr -->
@@ -168,14 +165,9 @@ function enquiry(){
                 }
             });
             
+            $(".check-btn").hide(); 
             
-             $(".check-btn").click(function() { 
-				 $("#tableDivId").html('');
-                comparitive(); 
-				 
-			}); 
-			
-			$(document).on("input", ".unit-cost", function() {
+            	$(document).on("input", ".unit-cost", function() {
 				let row = $(this).closest("tr");
                 let basePrice = parseFloat(row.find(".unit-cost").val()) || 0;
                 let qty = parseInt(row.find(".quantity").val()) || 1;
@@ -183,7 +175,13 @@ function enquiry(){
 				 row.find(".total-final-cost").val(totalCost.toFixed(2));
 		    });
 
-			 $(".project-header").prop("disabled",true); 
-});
+            
+             $(".check-btn").click(function() { 
+				  $("#dynamicTable").html('');
+                enquiry(); 
+				 
+			}); 
 
+
+});
 }

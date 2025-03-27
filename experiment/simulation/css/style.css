@@ -466,4 +466,32 @@ input[type="text"] {
             font-size: 20px; /* Font size */
             font-weight: bold; /* Font weight */
         
-        }     
+        }
+        
+ .form-container {
+            display: flex;
+            justify-content: space-between; /* Distribute elements evenly */
+            align-items: center;
+            width: 100%; /* Full width */
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .form-group {
+            flex: 1; /* Allow fields to grow */
+            display: flex;
+            align-items: center;
+            margin-right: 20px; /* Adjust spacing */
+        }
+
+        label {
+            width: 150px; /* Fixed width for labels */
+            white-space: nowrap; /* Prevents label from wrapping */
+            font-weight: bold;
+        }
+
+        input {
+            flex: 1; /* Makes input take the remaining space */
+            padding: 8px;
+            width: 100%; /* Ensures inputs take full space */
+        }          
