@@ -1,18 +1,77 @@
+function updateDateTime() {
+      const now = new Date();
+      const formatted = now.toLocaleString(); // e.g. "5/5/2025, 10:23:45 AM"
+      $('#dateTime').text(formatted);
+    }
+
+
+
 function result(){
+//	console.log("result");
+//	console.log(resultJson);
 	timerMasterJson.alam=$("#counter").text();
-	console.log(timerMasterJson);
+//	console.log(timerMasterJson);
 	seconds = 0;
 	  updateCounter();
 	$("#simDemo,#procedure,#counter,#tagDetails").prop("hidden",true);
 	$("#report").prop("hidden",false);
-	$("#Header").html("<center><span >BOILER HEAT EXCHANGER PLANT(FAULT)</span></center>");
+//	$("#Header").html("<center><span >Inquiry, Quotation, Comparative statement, Purchase orders</span></center>");
+$("#Header").prop("hidden", true);
+	
+	var enqAdd =resultJson.flg+resultJson.flg3+resultJson.flg2+resultJson.flg4+resultJson.flg5;
+//	console.log(enqAdd);
+		var enquiey1=parseFloat(enqAdd);
+	var quatAdd = resultJson.Qflg1+resultJson.Qpflg1+
+	resultJson.Qsvflg1+ resultJson.Qsflg1+resultJson.Qfflg1;
+//	console.log(quatAdd);
+	
+	
+	var quat1=parseFloat(quatAdd);
+	var piping=parseFloat((5/enqAdd)*100);
+	var instr=parseFloat((15/quatAdd)*100);
+	var comp = 100;
+	var purchase = 100;
+	var total = 0;
+	
+	if (selectedVendor == 1) {
+		quotationForm = finalData.Qutationform1;
+			total	 =	finalData.vendor1total;
+			total = Math.round(total);
+	} else if (selectedVendor == 2) {
+		quotationForm = finalData.Qutationform2;
+		total = finalData.vendor2total;
+		total = Math.round(total);
+	} else if (selectedVendor == 3) {
+		quotationForm = finalData.Qutationform3;
+		total = finalData.vendor3total;
+		total = Math.round(total);
+	}
 	
 	htm=''
 	+'<div class="container-fluid">'
-	  
+	  +`<div class="row" id="divMis" style="background-color: #2e3539; padding: 10px; display: flex; justify-content: center;">
+  <div style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
+    <span style="color: white;font-weight: bold;">Enter MIS No.:</span>
+    <input type="text" id="nameInput" style="color: #000; padding: 5px; max-width: 200px;">
+<label id="dateTime" style="color:#fff;"></label>
+
+  </div>
+</div>`
+	+'<div class="container-fluid">'
+//	 +' <div class="row titlePart" id="" ><center><span >Inquiry, Quotation, Comparative statement, Purchase orders</span></center></div>' 
 	+' <!-- Title -->'
 
-//	+'  <h3 class="text-center heading">Spray Drying Pilot Plant</h3>'
+	+'  <h3 class="text-center heading">Inquiry, Quotation, Comparative statement, Purchase orders</h3>'
+	
+	+`<div>
+	  <label style="background:#000; color:#fff;">Total Value of the Purchase Order: ${total}  </label><br>
+	   
+	   </div>
+	   
+	<div>
+	  <label style="background:#000; color:#fff;">Expected Delivery Date: ${quotationForm.deliveryDate}</label><br>
+ 
+	</div>`
 
 	+' <!-- Competency Table -->'
 	+' <div class="box">'
@@ -28,7 +87,7 @@ function result(){
 	+'    </thead>'
 	+'   <tbody>'
 	+'      <tr>'
-	+'       <td><b>MIMIC</b></td>'
+	+'       <td><b>Inquiry</b></td>'
 	+'        <td id="piping">'
 	
 	+'		</td>'
@@ -37,24 +96,34 @@ function result(){
 	+'       </td>'
 	+'     </tr>'
 	+'      <tr>'
-	+'        <td> <b>FAULT</b></td>'
+	+'        <td> <b>Quotation</b></td>'
 	+'        <td id="instr">'
 
 	+'		</td>'
-    +'        <td id="instrTimer">'
+    +'        <td id="quatTimer">'
 	
 	+'       </td>'
 	+'      </tr>'
 
-//	+'       <tr>'
-//	+'        <td><b>Simulation</b></td>'
-//	+'        <td id="simulation">'
-//	
-//    +'		</td>'
-//  +'        <td id="simulationTimer">'
-//	
-//	+'       </td>'
-//    +'     </tr>'
+	+'       <tr>'
+	+'        <td><b>Comparision</b></td>'
+	+'        <td id="comp">'
+	
+    +'		</td>'
+  +'        <td id="compareTimer">'
+	
+	+'       </td>'
+   +'     </tr>'
+   
+   +'       <tr>'
+   +'        <td><b>Purchase</b></td>'
+   +'        <td id="purch">'
+
+     +'		</td>'
+   +'        <td id="purchaseTimer">'
+
+   +'       </td>'
+    +'     </tr>'
           
     +'    </tbody>'
     +'  </table>'
@@ -70,7 +139,7 @@ function result(){
     +'  <div class="row">'
     +'   <div class="col-md-4" >'
     +'     <div class="box">'
-    +'      <h5 class="section-title sectionStyle" >MIMIC</h5>'
+    +'      <h5 class="section-title sectionStyle" >Inquiry</h5>'
     +'       <div class="table-container">'
     +'        <table style="border-style: solid;">'
     +'           <tr class="trStyle">'
@@ -78,15 +147,15 @@ function result(){
     +'             <th>Actual</th>'
     +'          </tr>'
     +'           <tr>'
-    +'           <td><b> <center><strong class="correct">1</strong> </center></b></td>'
-	+'           <td><b> <center><strong class="wrong">'+resultJson.startCount+'</strong> </center></b></td>'
+    +'           <td><b> <center><strong class="correct">5</strong> </center></b></td>'
+	+'           <td><b> <center><strong class="wrong">'+enqAdd+'</strong> </center></b></td>'
 	  +'         </table>'
     +'      </div>'
     +'    </div>'
     +'   </div>'
     +'  <div class="col-md-4" >'
     +'    <div class="box">'
-    +'     <h5 class="section-title sectionStyle" >FAULT</h5>'
+    +'     <h5 class="section-title sectionStyle" >Quotation</h5>'
     +'     <div class="table-container">'
 	+'       <table style="border-style: solid;">'
 	+'          <tr class="trStyle">'
@@ -94,8 +163,25 @@ function result(){
 	+'            <th>Actual</th>'
 	+'          </tr>'
 	+'          <tr>'
-	 +'						  <td><b class="correct">1</b></td>'
-	    +'                       <td><b class="wrong">'+resultJson.faultCount+'</b></td>'
+	 +'						  <td><b class="correct">15</b></td>'
+	    +'                       <td><b class="wrong">'+quatAdd+'</b></td>'
+	  	+'          </tr>'
+	+'        </table>'
+	+'      </div>'
+	+'     </div>'
+	+'   </div>'
+	    +'  <div class="col-md-4" >'
+    +'    <div class="box">'
+    +'     <h5 class="section-title sectionStyle" >Comparision and Purchase order</h5>'
+    +'     <div class="table-container">'
+	+'       <table style="border-style: solid;">'
+	+'          <tr class="trStyle">'
+	+'            <th>Expected</th>'
+	+'            <th>Actual</th>'
+	+'          </tr>'
+	+'          <tr>'
+	 +'						  <td><b class="correct">2</b></td>'
+	    +'                       <td><b class="wrong">2</b></td>'
 	  	+'          </tr>'
 	+'        </table>'
 	+'      </div>'
@@ -108,7 +194,7 @@ function result(){
 //	+'  </div>'
 //	+' <div class="col-md-6">'
 //	+'   <div class="box">'
-//	+'     <h5 class="section-title sectionStyle" >Sequence of Activities</h5>'
+//	+'     <h5 class="section-title sectionStyle" >Comparision and Purchase order</h5>'
 //	+'     <div class="table-container">'
 //	+'       <table style="border-style: solid;">'
 //	+'         <tr class="trStyle">'
@@ -116,8 +202,8 @@ function result(){
 //	+'           <th>Actual</th>'
 //	+'         </tr>'
 //	+'         <tr>'
-//	 +'						  <td><b class="correct">1</b></td>'
-// +'                       <td><b class="wrong">'+resultJson.animationStart+'</b></td>'
+//	 +'						  <td><b class="correct">2</b></td>'
+// +'                       <td><b class="wrong">2</b></td>'
 // +'         </tr>'
 //	+'       </table>'
 //	+'     </div>'
@@ -201,15 +287,13 @@ function result(){
 //    +'</div>'
     $("#mainDiv").html(htm);
 	
-	var piping=parseFloat((1/resultJson.startCount)*100);
-	var instr=parseFloat((1/resultJson.faultCount)*100);
+
 	
 //	var startPer=parseFloat((resultJson.animationStart/3)*100);
 //	var datasheetPer=parseFloat((resultJson.datasheet/3)*100);
 //	var trendsPer=parseFloat((resultJson.trends/3)*100);
 //	
-//	var simuAdd=resultJson.animationStart+resultJson.datasheet+resultJson.trends;
-//	var simulation1=parseFloat((simuAdd/9)*100);
+//	
 //	console.log(" piping "+piping);
 //	console.log(" instr "+instr);
 //	console.log(" squ "+squ);
@@ -227,7 +311,7 @@ function result(){
 	 $("#piping").html(str);
 		 var str1=''
 	+'	     	<div class="alert alert-success attainedText">'
-	+'    	   <center><strong> '+timerMasterJson.mimic+'</strong> </center>'
+	+'    	   <center><strong> '+timerMasterJson.enquiey+'</strong> </center>'
 	+'     		 </div>'
 	 $("#pipingTimer").html(str1); 
 		     
@@ -241,11 +325,11 @@ function result(){
 		     $("#piping").html(str);
 		 var str1=''
 				+'	     	<div class="alert alert-danger attainedText">'
-				+'    	   <center><strong> '+timerMasterJson.mimic+'</strong> </center>'
+				+'    	   <center><strong> '+timerMasterJson.enquiey+'</strong> </center>'
 				+'     		 </div>'
 							     $("#pipingTimer").html(str1); 
 		 
-		 
+								
 		}
 	if(instr>=60){
 		 var str=''
@@ -255,9 +339,9 @@ function result(){
 		     $("#instr").html(str);
 		 var str1=''
 				+'	     	<div class="alert alert-success attainedText">'
-				+'    	   <center><strong> '+timerMasterJson.alam+'</strong> </center>'
+				+'    	   <center><strong> '+timerMasterJson.quat+'</strong> </center>'
 				+'     		 </div>'
-							     $("#instrTimer").html(str1); 
+							     $("#quatTimer").html(str1); 
 		 	 
 		     
 	}
@@ -270,10 +354,66 @@ function result(){
 		     $("#instr").html(str);
 		 var str1=''
 				+'	     	<div class="alert alert-danger attainedText">'
-				+'    	   <center><strong> '+timerMasterJson.alam+'</strong> </center>'
+				+'    	   <center><strong> '+timerMasterJson.quat+'</strong> </center>'
 				+'     		 </div>'
-							     $("#instrTimer").html(str1); 
+							     $("#quatTimer").html(str1); 
 		}
+		
+		if(comp>=60){
+				 var str=''
+			 +'	     	<div class="alert alert-success attainedText">'
+			+'    			 <center><strong> Attained</strong> </center>'
+			+'     		 </div>'
+				     $("#comp").html(str);
+				 var str1=''
+						+'	     	<div class="alert alert-success attainedText">'
+						+'    	   <center><strong> '+timerMasterJson.compare+'</strong> </center>'
+						+'     		 </div>'
+									     $("#compareTimer").html(str1); 
+				 	 
+				     
+			}
+			else
+				{
+				 var str=''
+					 +' <div class="alert alert-danger attainedText">'
+				    +'  <center><strong>Not Attained</strong> </center>'
+				     +'  </div>'
+				     $("#comp").html(str);
+				 var str1=''
+						+'	     	<div class="alert alert-danger attainedText">'
+						+'    	   <center><strong> '+timerMasterJson.compare+'</strong> </center>'
+						+'     		 </div>'
+									     $("#compareTimer").html(str1); 
+				}
+				
+				if(purchase>=60){
+								 var str=''
+							 +'	     	<div class="alert alert-success attainedText">'
+							+'    			 <center><strong> Attained</strong> </center>'
+							+'     		 </div>'
+								     $("#purch").html(str);
+								 var str1=''
+										+'	     	<div class="alert alert-success attainedText">'
+										+'    	   <center><strong> '+timerMasterJson.alam+'</strong> </center>'
+										+'     		 </div>'
+													     $("#purchaseTimer").html(str1); 
+								 	 
+								     
+							}
+							else
+								{
+								 var str=''
+									 +' <div class="alert alert-danger attainedText">'
+								    +'  <center><strong>Not Attained</strong> </center>'
+								     +'  </div>'
+								     $("#purch").html(str);
+								 var str1=''
+										+'	     	<div class="alert alert-danger attainedText">'
+										+'    	   <center><strong> '+timerMasterJson.alam+'</strong> </center>'
+										+'     		 </div>'
+													     $("#purchaseTimer").html(str1); 
+								}
 	
 //	if(startPer>=100 && datasheetPer>=100 && trendsPer>=100){
 //		 var str=''
@@ -354,13 +494,58 @@ function result(){
 	    series: [{
 	        name: '',
 	        data: [
-	            { name: 'MIMIC', y: piping },
-	            { name: 'FAULT', y: instr }
+	            { name: 'Enquiry', y: piping },
+	            { name: 'Quotation', y: instr },
 	            
-//	            { name: 'SIMULATION', y: simulation1 }
+	            { name: 'Comparision', y: comp },
+				{ name: 'Purchase', y: purchase }
 	          
 	        ]
 	    }]
 	});
-
+	
+	updateDateTime();
+	
+$("#report").click(function() {
+		tmp = $("#nameInput").val();
+		if(tmp != ""){
+			
+			  // Restore value from localStorage when page loads
+			  const savedName = localStorage.getItem("username");
+			  if (savedName) {
+			    $('#nameInput').val(savedName);
+			  }
+ 
+			  // Save input on change
+			  $('#nameInput').on('input', function() {
+			    localStorage.setItem("username", $(this).val());
+			  });
+			
+ 
+			console.log("click triggred");
+ 
+			const button = document.getElementById("report");
+			button.hidden = true;
+ 
+			html2canvas(document.querySelector("#mainDiv"), {
+				useCORS: true,
+				allowTaint: false,
+				backgroundColor: null
+			}).then(canvas => {
+				let link = document.createElement('a');
+				link.download = 'report.png';
+				link.href = canvas.toDataURL("image/png");
+				link.click();
+				$("#divMis").prop("hidden",true);
+//				$("#btnNext").prop("hidden", false);
+			}).catch(err => {
+				console.error("Screenshot failed:", err);
+			}).finally(() => {
+				button.hidden = true;
+			});
+			
+			}else{
+				alert("Enter MIS Number");
+			}
+	});
 }

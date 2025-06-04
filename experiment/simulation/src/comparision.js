@@ -56,10 +56,10 @@ function comparitive(){
                     </select>
                 </td>
                
-                <td><input type="number" class="ven1" placeholder=""></td>
-                <td><input type="text" class="ven2" ></td>
-                <td><input type="text" class="ven3" ></td>
-                 <td><input type="text" class="ven4" ></td>
+                <td><input type="number" class="ven1 vendor" placeholder=""></td>
+                <td><input type="number" class="ven2 vendor" ></td>
+                <td><input type="number" class="ven3 vendor" ></td>
+                 <td><input type="number" class="ven4 vendor" ></td>
                 <td><button class=" btn remove-btn" data-toggle="modal" data-target="#preReq">Remove</button></td>
             </tr>
         </tbody>
@@ -148,13 +148,39 @@ function comparitive(){
                      newRow.find("select").val("");
                      newRow.appendTo("#dynamicTable tbody");
                      updateRowNumbers();
+//                     removeAllLowestClasses();
+//                     addRow();
                      showModal(`<strong style="color:#153f68;font-size: large;"> Adding a new row.</strong>`);
-					
-				}
-				
-				
+                       	  
+}
 		
             });
+            
+            
+    function addRow() {
+  const table = document.getElementById('vendorTable');
+  const row = table.insertRow();
+
+  for (let i = 0; i < 4; i++) {
+    const cell = row.insertCell();
+    const input = document.createElement('input');
+    input.type = 'number';
+    input.classList.add('vendor');
+    input.classList.remove('lowest'); // just in case
+    input.value = ''; // clear value
+    cell.appendChild(input);
+  }
+
+  attachInputListeners(); // make sure new inputs get event listeners
+				
+}
+
+
+function removeAllLowestClasses() {
+  document.querySelectorAll('.vendor').forEach(input => {
+    input.classList.remove('lowest');
+  });
+}
 
             $(document).on("click", ".remove-btn", function() {
 				
@@ -171,9 +197,124 @@ function comparitive(){
             
              $(".check-btn").click(function() { 
 				   $("#tableDivId").html('');
-               purchase(); 
+               		purchase(); 
 				 
 			}); 
+		
+ $(document).on( "input", " .ven4,.ven1,.ven2,.ven3", function() {
+//	 getMinValue();
+	  // Attach input listener to all vendor fields
+	  
+  document.querySelectorAll('.vendor').forEach(input => {
+    input.addEventListener('input', highlightLowestInput);
+  });
+  
+  // Add at the end of highlightLowestInput
+//document.getElementById('summary').innerHTML = lowestVendorsPerRow.map(item =>
+//  `Row ${item.row}: ${item.vendors.join(', ')} (₹${item.price})`
+//).join('<br>');
+ 
+	 
+}); 
+  function getMinValue() {
+    const inputs = document.querySelectorAll('.vendor');
+    const values = [];
+
+    inputs.forEach(input => {
+      const val = parseFloat(input.value);
+      if (!isNaN(val)) {
+        values.push(val);
+      }
+    });
+
+    if (values.length > 0) {
+      const minValue = Math.min(...values);
+      console.log("Minimum value is:", minValue);
+      return minValue;
+    } else {
+      console.log("No valid values entered.");
+      return null;
+    }
+    
+       
+  
+  }
+
+  // Example: Run when a button is clicked
+  // getMinValue(); // or call it after user input
+  
+//   function highlightLowestInput() {
+//    const inputs = document.querySelectorAll('.vendor');
+//    let minValue = Infinity;
+//    let lowestInputs = [];
+//
+//    // First remove existing highlights
+//    inputs.forEach(input => input.classList.remove('lowest'));
+//
+//    // Find the minimum value
+//    inputs.forEach(input => {
+//      const val = parseFloat(input.value);
+//      if (!isNaN(val)) {
+//        if (val < minValue) {
+//          minValue = val;
+//          lowestInputs = [input];
+//        } else if (val === minValue) {
+//          lowestInputs.push(input); // Handles ties
+//        }
+//      }
+//    });
+//
+//    // Apply highlight to the lowest input(s)
+//    lowestInputs.forEach(input => input.classList.add('lowest'));
+//  }
+  
+  function highlightLowestInput() {
+  // Get all rows in the table
+  const rows = document.querySelectorAll('table tr');
+    const lowestVendorsPerRow = [];
+
+  rows.forEach((row,rowIndex) => {
+    // Get all vendor inputs in this row
+    const inputs = row.querySelectorAll('.vendor');
+    let minValue = Infinity;
+    let lowestInputs = [];
+     let lowestIndexes = [];
+
+    // Remove previous highlight from this row
+    inputs.forEach(input => input.classList.remove('lowest'));
+
+    // Find minimum value in this row
+    inputs.forEach((input,index) => {
+      const val = parseFloat(input.value);
+      if (!isNaN(val)) {
+        if (val < minValue) {
+          minValue = val;
+          lowestInputs = [input];
+          lowestIndexes = [index];
+        } else if (val === minValue) {
+          lowestInputs.push(input); // Handle ties
+          lowestIndexes.push(index);
+        }
+      }
+    });
+
+    // Apply highlight to the lowest input(s) in this row
+    lowestInputs.forEach(input => input.classList.add('lowest'));
+    
+        // Add vendor(s) with lowest price to the result list
+    if (lowestIndexes.length > 0) {
+      const vendors = lowestIndexes.map(i => `Vendor ${i + 1}`);
+      lowestVendorsPerRow.push({
+        row: rowIndex + 1,
+        vendors: vendors,
+        price: minValue
+      });
+    }
+  });
+  
+    console.log("Lowest vendors per row:", lowestVendorsPerRow);
+}
+
 
 
 });
