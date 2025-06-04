@@ -1,7 +1,7 @@
 
 <html>
 <head>
-<title>Cost Estimation</title>
+<title>Purchase Procedure</title>
 
 </head>
  <meta charset="utf-8">
@@ -24,6 +24,7 @@
 <link rel="stylesheet" href="css/pageStyle.css">
 <link rel="stylesheet" href="css/enquiry.css">
 <link rel="stylesheet" href="css/result.css">
+<link rel="stylesheet" href="css/form.css">
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js" integrity= "sha256-xH4q8N0pEzrZMaRmd7gQVcTZiFei+HfRTBPJ1OGXC0k=" crossorigin="anonymous"> 
@@ -39,7 +40,7 @@
 }
 
 </style>
-<body >
+<body>
 <header>
 		<img class="COEPLogo" src='images/COEPlogo.png' id="coepLogo" disabled>
 		<img class="VlabLogo" src='images/vlablogo.jpg' id="vlabLogo" disabled>
@@ -85,25 +86,25 @@
 	     
  	</div>
  	  
-    <div class="row titlePart" id="Header" ></div>
+    <div class="row titlePart" id="Header" style="font-weight: 700; font-size:25px;"><center>Inquiry, Quotation, Comparative statement and Purchase order</center></div>
 
 	<div class="container-fluid" style="margin-top:10px; " id="mainDiv" >
 	
 	
-<div class="row justify-content-center" style="margin-bottom:0px;">
-            <div class="col-md-8 instruction-box">
-            <h3 class="text-center" style="    color: cornflowerblue;
-    font-weight: 900;
-    font-family: emoji;">Inquiry, Quotation, Comparative statement, Purchase orders </h3>
+<!--<div class="row justify-content-center" style="margin-bottom:0px;">-->
+<!--            <div class="col-md-8 instruction-box">-->
+<!--            <h3 class="text-center" style="    color: cornflowerblue;-->
+<!--    font-weight: 900;-->
+<!--    font-family: emoji;">Inquiry, Quotation, Comparative statement and Purchase order </h3>-->
               
-            </div>
-        </div>
+<!--            </div>-->
+<!--        </div>-->
  <div class="row justify-content-center" style="margin-bottom:20px;">
-            <div class="col-md-8 instruction-box">
+            <div class="col-md-8 instruction-box" style="background-color:#67918f5e; border: 2px solid #346e6e;">
 <!--             <h4 class="text-center">COST ESTIMATION</h4> -->
-                <span class="fw-bold" style="    font-family: emoji;
-    font-size: 18px;
-    word-spacing: 1px;">As a Consulting Instrumentation Engineer you are required to prepare a inquiry sheet  
+                <span class="" style="    font-family: emoji;
+    font-size: 25px;
+    word-spacing: 1px;">As a Consulting Instrumentation Engineer you are required to prepare a purchase procedure sheet  
                 as per your company standard for the plant assigned to you
              </span>
             </div>
@@ -111,10 +112,10 @@
  <div class="row justify-content-center">
             
             <div class="col-md-4">
-                <div class="card p-3">
+                <div class="card p-3" style="background-color:#67918f5e">
                     <h5 class="text-center">BOILER AND HEAT EXCHANGER</h5>
                     <img src="images/boilerheatExchanger.jpg" class="img-fluid rounded">
-                    <button class="btn btn-success " id="boiler" style="float:right;margin: 10px;background-color:teal;" >Click here to Start</button>
+                    <button class="btn btn-success " id="boiler" style="float:right;margin: 10px;background-color:teal; font-size: 20px;" >CLICK HERE TO START</button>
                
                 </div>
             </div>
@@ -124,7 +125,7 @@
 <!-- 	  			  <div class="col-sm-3" id="Selection" style=" border-style: double; margin-bottom: 25px;"> -->
 <!-- 	      	</div> -->
 <!-- 	    	<div class="col-sm-9" id="diagram" style=" border-style: double;margin-bottom: 18px;"> -->
-<!-- 			<!--      <img src="images/dryer12.png" class="img-fluid" style="margin-top:10px;"> --> -->
+<!-- 			<!--      <img src="images/dryer12.png" class="img-fluid" style="margin-top:10px;"> --> 
 <!-- 	    	</div> -->
 <!-- 	  	 </div> -->
 	</div>
@@ -143,35 +144,52 @@ Copyrights &copy; COEPTECH - Virtual Labs
     <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.15/paper-full.min.js"></script>
    <script type="text/javascript" src="js/toastr.min.js"></script>
-
- <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/exporting.js"></script>
-    <script src="https://code.highcharts.com/modules/stock-tools.js"></script>
    
-   
-<script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+   <script src="https://code.highcharts.com/highcharts.js"></script>
+   <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<!-- <script src="src/landingPage.js"></script> -->
-<script src="src/popupData.js"></script>
 <script src="src/stdJson.js"></script>
 <script src="src/questionJson.js"></script>
 
 <!-- Plant 2- BoilerHeatExchanger -->
 
 <script src="src/cost.js"></script>
-<script src="src/Enquiry.js"></script>
-<script src="src/comparision.js"></script>
-<script src="src/purchase.js"></script>
+<script src="src/inquiryPLC.js"></script>
+<script src="src/form1.js"></script>
+<script src="src/quPLC.js"></script>
+<script src="src/software.js"></script>
+<script src="src/service.js"></script>
+<script src="src/quataInst.js"></script>
+<script src="src/quataInst1.js"></script>
+<script src="src/quataInst2.js"></script>
+<script src="src/quatplc1.js"></script>
+<script src="src/quatplc2.js"></script>
+<script src="src/quatplc3.js"></script>
+<script src="src/quatsoft1.js"></script>
+<script src="src/quatsoft2.js"></script>
+<script src="src/quatsoft3.js"></script>
+<script src="src/quatserv1.js"></script>
+<script src="src/formQuat.js"></script>
+<script src="src/quataInst1.js"></script>
+<script src="src/quatserv2.js"></script>
+<script src="src/QuatForm2.js"></script>
+<script src="src/quataInst2.js"></script>
+<script src="src/quatserv3.js"></script>
 
+<script src="src/QuatForm3.js"></script>
+<script src="src/compare.js"></script>
+<script src="src/compare2.js"></script>
+<script src="src/purchaseform.js"></script>
+<script src="src/comparision.js"></script>
 <script src="src/result.js"></script>
 <script src="src/timer.js"></script>
 
 <script>
 $( "#boiler" ).click(function() {
 	cost();
+	//purchaseform();
 });
 </script>
 <script>
@@ -199,20 +217,6 @@ $("#coepLogo").click(function(evt) {
 	
 	 $('#coepLogo').off('click');
 });
-
-$('#report').on('click', function() {
-			$('#report').prop("hidden",true);
-		    html2canvas(document.querySelector("#mainDiv")).then(canvas => {
-		        // Append the screenshot canvas to the body
-		        document.body.appendChild(canvas);
-		        $("canvas").css("display","none");
-		        // Optionally save the screenshot as an image
-		        var link = document.createElement('a');
-		        link.download = 'BoilerHeatExchanger_report.png';
-		        link.href = canvas.toDataURL();
-		        link.click();
-		    });
-		});
 
 </script>
 </html>
