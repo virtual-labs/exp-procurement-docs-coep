@@ -122,6 +122,7 @@ h2 {
     color: #555;
 }
 
+
 /* Menu */
 
 .menu {
@@ -427,10 +428,10 @@ ul li {
 
 input[type="text"] {
     padding: 6px;
-    border: 1px solid #ccc;
+/*    border: 1px solid #ccc;*/
     border-radius: 5px;
     width: 100%;
-    max-width: 300px;
+/*    max-width: 300px;*/
 }
 
 .modal-content{
@@ -450,7 +451,7 @@ input[type="text"] {
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
-            margin-top: 20px;
+            margin-top: 5px;
         } 
         
         
@@ -485,13 +486,13 @@ input[type="text"] {
         }
 
         label {
-            width: 150px; /* Fixed width for labels */
+           
             white-space: nowrap; /* Prevents label from wrapping */
             font-weight: bold;
         }
 
         input {
-            flex: 1; /* Makes input take the remaining space */
+/*            flex: 1;  Makes input take the remaining space */
             padding: 8px;
             width: 100%; /* Ensures inputs take full space */
         }          
