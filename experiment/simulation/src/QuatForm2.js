@@ -6,26 +6,26 @@ function quateform2() {
 	const vendor1LastRow = vendor1QuotationItems[vendor1QuotationItems.length - 1];
 
 	let vendorinst = vendor1LastRow?.grandTotal || 0;
-	
+		vendorinst = Math.round(vendorinst);
 	const vendor1QuotationItems1 = finalData.Plcvendor2?.quotationItems || [];
 	const vendor1LastRow1 = vendor1QuotationItems1[vendor1QuotationItems1.length - 1];
 
 	let vendorplc = vendor1LastRow1?.grandTotal || 0;
-	
+		vendorplc = Math.round(vendorplc);
 	const vendor1QuotationItems2 = finalData.softvendor2?.quotationItems || [];
 	const vendor1LastRow2 = vendor1QuotationItems2[vendor1QuotationItems2.length - 1];
 
 	let vendorsoft = vendor1LastRow2?.grandTotal || 0;
-	
+		vendorsoft = Math.round(vendorsoft);
 	const vendor1QuotationItems3 = finalData.servendor2?.quotationItems || [];
 	const vendor1LastRow3 = vendor1QuotationItems3[vendor1QuotationItems3.length - 1];
 
 	let vendorServ = vendor1LastRow3?.grandTotal || 0;
-	
+		vendorServ = Math.round(vendorServ);
 	let Ventotal = vendorinst + vendorplc + vendorServ + vendorsoft ;
+		Ventotal = Math.round(Ventotal);
 
-
-	$("#Header").html("<center><span>VENDOR-2 QUOTATION (TERMS AND CONDITION)</span></center>");
+	$("#Header").html("<center><span>VENDOR-2 QUOTATION (TERMS AND CONDITIONS)</span></center>");
 
 	htm = `
   <div class="row prjHeader"><center> Total cost of the project in Rs. (Quoted) </center></div>

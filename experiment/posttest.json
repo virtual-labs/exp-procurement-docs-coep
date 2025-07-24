@@ -2,11 +2,11 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "What is the most efficient way to send an enquiry to multiple suppliers?",
+      "question": "What is the most efficient way to send an inquiry to multiple suppliers?",
       "answers": {
          "a": "Send a separate email to each supplier",
-        "b": "Use procurement software to send a single enquiry to multiple suppliers",
-        "c": "Fax the enquiry to each supplier",
+        "b": "Use procurement software to send a single inquiry to multiple suppliers",
+        "c": "Fax the inquiry to each supplier",
         "d": "Call each supplier individually"
 		
       },
@@ -15,10 +15,10 @@
       "difficulty": "beginner"
     },
     {
-      "question": "What is the best way to ensure that all necessary information is included in an enquiry?",
+      "question": "What is the best way to ensure that all necessary information is included in an inquiry?",
       "answers": {
-        "a": "Use a standard template for the enquiry",
-        "b": "Write a custom enquiry for each supplier",
+        "a": "Use a standard template for the inquiry",
+        "b": "Write a custom inquiry for each supplier",
         "c": "Include only the most critical information",
         "d": "Omit any unnecessary information"
       },
