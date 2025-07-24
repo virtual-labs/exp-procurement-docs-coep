@@ -128,4 +128,4 @@ The vendor provides post-purchase support, including:
 -	Warranty and guarantee support
 
 This is a general outline of the purchase process for process plant equipment procurement. The specific steps and requirements may vary depending on the organization, industry, and need to be studied before commencement of procurement process.
-![*Transmitters* ](images/Transmitters.docx)
+

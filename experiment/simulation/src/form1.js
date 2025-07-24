@@ -1,7 +1,7 @@
 var tax = 0;
 
 function enquiryform() {
-	$("#Header").html("<center><span>INQUIRY (TERMS AND CONDITION)</span></center>");
+	$("#Header").html("<center><span>INQUIRY (TERMS AND CONDITIONS)</span></center>");
 
 	htm = `
 		<div class="row prjHeader"><center>Project Requirement Form</center></div>
@@ -44,18 +44,30 @@ function enquiryform() {
     <input type="text" id="payment-terms" name="payment-terms">
     
      <div class="tagHeader">Taxes and other charges</div>
-    <div class="row">
-    <div class="col-4">
+     <div class="row">
+     <div class="col-4">
+     <label for="taxes" class="subTagHeader">CGST %</label>
+    <input type="number" id="cgst" name="Gst">
+     </div>
+     
+     <div class="col-4">
+     <label for="taxes" class="subTagHeader">SGST %</label>
+    <input type="number" id="sgst" name="Gst">
+     </div>
+     
+     <div class="col-4">
      <label for="taxes" class="subTagHeader">GST %</label>
     <input type="number" id="gst" name="Gst">
      </div>
+     </div>
      
-    <div class="col-4">
+    <div class="row">
+    <div class="col-6">
      <label for="taxes" class="subTagHeader">Packing and forwarding </label>
     <input type="number" id="pck-forw" name="pack">
     </div>
     
-    <div class="col-4">
+    <div class="col-6">
      <label for="taxes" class="subTagHeader">Insurance</label>
     <input type="number" id="insu" name="insur">
     </div>
@@ -146,6 +158,18 @@ function enquiryform() {
 				});
 		}
 	});
+	
+	$("#sgst").change(function(){
+		let cgst = parseFloat(document.getElementById("cgst").value) || 0;
+		let sgst = parseFloat(document.getElementById("sgst").value) || 0;
+		console.log(sgst);
+		
+		let gst = cgst+sgst;
+		
+		document.getElementById("gst").value = gst;
+		$("#gst").prop("disabled",true);	
+		
+		});
 
 
 	function calculateTotalCharges() {

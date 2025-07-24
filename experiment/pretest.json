@@ -2,7 +2,7 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "What is the primary purpose of an enquiry in the purchasing process?",
+      "question": "What is the primary purpose of an inquiry in the purchasing process?",
       "answers": {
          "a": "To place an order with a supplier ",
         "b": "To compare prices from different suppliers ",
@@ -40,23 +40,10 @@
 	{
       "question": "What is the legal requirement for a purchase order in most jurisdictions?",
       "answers": {
-        "a": "It must be signed by the supplier",
+        "a": "It must be signed by both parties",
         "b": "It must be signed by the purchaser",
-        "c": "It must be in writing and signed by both parties",
+        "c": "It must be signed by the supplier",
         "d": "It must be verbal and agreed upon by both parties"
-      },
-     
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    },
-	
-	{
-      "question": "What is the purpose of a purchase agreement?",
-      "answers": {
-        "a": "To outline the terms and conditions of a contract",
-        "b": "To request information from suppliers about their products or services",
-        "c": "To compare prices from different suppliers",
-        "d": "To place an order with a supplier"
       },
      
       "correctAnswer": "a",
@@ -93,12 +80,12 @@
       "question": "What is the legal requirement for a contract in most jurisdictions?",
       "answers": {
         "a": "It must be signed by the supplier ",
-        "b": "It must be signed by the purchaser",
-        "c": "It must be in writing and signed by both parties",
+        "b": "It must be signed by both parties and accepted through email",
+        "c": "It must be signed by the purchaser",
         "d": "It must be verbal and agreed upon by both parties"
       },
      
-      "correctAnswer": "c",
+      "correctAnswer": "b",
       "difficulty": "beginner"
     },
 	
@@ -120,11 +107,11 @@
       "answers": {
         "a": "It must be signed by the supplier",
         "b": "It must be signed by the purchaser",
-        "c": "It must be in writing and signed by both parties",
-        "d": "It must be verbal and agreed upon by both parties"
+        "c": "It must be verbal and agreed upon by both parties",
+        "d": "It must be aggreed in writing and signed by both parties"
       },
      
-      "correctAnswer": "c",
+      "correctAnswer": "d",
       "difficulty": "beginner"
     }
   
