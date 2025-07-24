@@ -1,6 +1,6 @@
 ## Aim 
 
-To create procurement documents Enquiry, Quotation, Comparative Statement, Purchase Order for a typical project
+To create procurement documents Inquiry, Quotation, Comparative Statement, Purchase Order for a typical project
 
 ## Objectives 
  
