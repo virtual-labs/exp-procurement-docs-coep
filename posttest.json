@@ -1,0 +1,138 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "What is the most efficient way to send an inquiry to multiple suppliers?",
+      "answers": {
+         "a": "Send a separate email to each supplier",
+        "b": "Use procurement software to send a single inquiry to multiple suppliers",
+        "c": "Fax the inquiry to each supplier",
+        "d": "Call each supplier individually"
+		
+      },
+      
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the best way to ensure that all necessary information is included in an inquiry?",
+      "answers": {
+        "a": "Use a standard template for the inquiry",
+        "b": "Write a custom inquiry for each supplier",
+        "c": "Include only the most critical information",
+        "d": "Omit any unnecessary information"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "What is the most efficient way to compare prices from different suppliers?",
+      "answers": {
+        "a": "Create a spreadsheet to compare prices",
+        "b": "Use procurement software to compare prices",
+        "c": "Manually compare prices from each supplier's quote",
+        "d": "Ask each supplier to provide a summary of their prices"
+      },
+     
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+	{
+      "question": "What is the best way to ensure that all suppliers are evaluated equally?",
+      "answers": {
+        "a": "Use a weighted scoring system to evaluate suppliers",
+        "b": "Evaluate suppliers based on price alone",
+        "c": "Evaluate suppliers based on their reputation alone",
+        "d": "Use a random selection process to choose a supplier"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "What is the most efficient way to create a purchase order?",
+      "answers": {
+        "a": "Use a standard template for the purchase order",
+        "b": "Write a custom purchase order for each supplier",
+        "c": "Include only the most critical information",
+        "d": "Omit any unnecessary information"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+  
+  {
+      "question": "What is the best way to ensure that all necessary information is included in a purchase order?",
+      "answers": {
+        "a": "Use a checklist to ensure all information is included",
+        "b": "Rely on the supplier to provide all necessary information",
+        "c": "Include only the most critical information",
+        "d": "Omit any unnecessary information"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	
+  {
+      "question": "What is the most efficient way to send a purchase order to a supplier?",
+      "answers": {
+        "a": "Send a physical copy of the purchase order to the supplier",
+        "b": "Send an electronic copy of the purchase order to the supplier",
+        "c": "Fax the purchase order to the supplier",
+        "d": "Call the supplier to verbally place the order"
+      },
+     
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+  
+  
+  {
+      "question": "What is the best way to track the status of a purchase order?",
+      "answers": {
+        "a": "Use procurement software to track the status of the purchase order ",
+        "b": "Call the supplier to ask about the status of the purchase order",
+        "c": "Send a follow-up email to the supplier to ask about the status of the purchase order",
+        "d": "Use a spreadsheet to track the status of the purchase order"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+  
+  
+  {
+      "question": "What is the most efficient way to manage multiple purchase orders?",
+      "answers": {
+        "a": "Use procurement software to manage multiple purchase orders",
+        "b": "Use a spreadsheet to manage multiple purchase orders",
+        "c": "Use a physical filing system to manage multiple purchase orders",
+        "d": "Manage each purchase order individually"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+  
+  
+  {
+      "question": "What is the best way to ensure that all purchase orders are compliant with organizational policies and procedures?",
+      "answers": {
+        "a": "Use procurement software to ensure compliance",
+        "b": "Rely on the supplier to ensure compliance",
+        "c": "Manually review each purchase order for compliance",
+        "d": "Ignore organizational policies and procedures"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  
+  
+  ]
+}
