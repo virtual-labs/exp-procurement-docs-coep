@@ -51,7 +51,7 @@ $("#Header").prop("hidden", true);
 	+'<div class="container-fluid">'
 	  +`<div class="row" id="divMis" style="background-color: #2e3539; padding: 10px; display: flex; justify-content: center;">
   <div style="display: flex; align-items: center; gap: 10px; white-space: nowrap;">
-    <span style="color: white;font-weight: bold;">Enter MIS No.:</span>
+    <span style="color: white;font-weight: bold;">Enter Name.:</span>
     <input type="text" id="nameInput" style="color: #000; padding: 5px; max-width: 200px;">
 <label id="dateTime" style="color:#fff;"></label>
 
@@ -545,7 +545,7 @@ $("#report").click(function() {
 			});
 			
 			}else{
-				alert("Enter MIS Number");
+				alert("Enter Name");
 			}
 	});
 }
